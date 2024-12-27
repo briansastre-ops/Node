@@ -1,0 +1,61 @@
+Que es Node?
+nodeJS es basicamente una ambiente de ejecucion para JavaScript Desligado del Navegador
+
+Que hace popular a nodeJS  ?
+
+Motor---> Codigo abierto con el motor V8 de google y esta diseñado para realizar tareas de E/s (Entrada y salida) Junto con el manejo de archivos de la computadora del cleinte servidor
+
+Caracteristicas --> Asincronia
+                --> Modulos Antivos y de Terceros
+                --> Gestion de paquetes con Npm
+                --> Construccion de Servidores
+                --> Escabilidad
+                --> Multiple Plataforma
+
+Non blocking I/O : casi ninguna funcion de node bloquea la lectura , por lo que podemos tener cientos de peticiones sin bloquear el servidor (Con la libreria 'libuv')
+Bloqueo vs No Bloqueo en Node.js
+
+I/O : Se refire principalmente a la interaccion con el disco duro del sistem
+
+blocking: Basicamente cuando la ejecucion del codigo debe esperar a que se complete el proceso pero este a su vez, impide que se sigan ejecutando otras intruciones en paralelo
+
+
+NPM --> (Node package manager) es el egestor de paquetes con mayor crecimineto y paquetes desplegados.
+
+Node tambies es muy usado para crear herramientas y ejecutar  paquetes sin tener que instalarlos con NPX ('Node package execute')
+
+//EventLoop & CodeExecution
+
+//setTimeout (cb1,0)
+
+//Promise.resolve().then(cb2)
+
+//process.nextTick(cb3)
+
+//fs.readFile('file.txt'),cb4)
+
+//setImmediate(cb5)
+
+{/*
+//quien se ejecuta primero? (problema de javascript es que es Blocking y singlethreaded)
+
+while (true) {
+    //procedimineto}
+        moreWork()//-->Nunca se ejecuta
+        
+    3 Componente principales de Node
+    
+    1-->Js library
+    
+    2-->c/c++ features
+    
+    3-->Dependencieas externas -->V8 -->libuv -->zlib -->crypto -->etc
+    
+    
+*/}
+
+libuv = su rol principal es manejar todas las operaciones Asincronnicas
+
+que pasaria si dos timeouts terminan al mismo tiempo ?
+que pasa si una Promesa termian al mismo tiempo que otro callback?
+en que orden se ejecutaran?

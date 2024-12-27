@@ -1,0 +1,54 @@
+ Bloqueo vs No Bloqueo en Node.js
+   ---------------------------------
+
+   3.1. Introducción
+        - Diferencia entre bloqueo y no bloqueo.
+        - Conceptos clave: bucle de eventos, libuv.
+        - Requisitos: conocimientos básicos de JavaScript y Node.js.
+
+   3.2. Bloqueo
+        - **Definición:** 
+          - Detiene la ejecución de JavaScript hasta que una operación no JavaScript se completa.
+        - **Impacto:** 
+          - El bucle de eventos queda inactivo, deteniendo otras tareas de JavaScript.
+        - **Ejemplos:** 
+          - Métodos síncronos en la biblioteca estándar de Node.js.
+          - Algunos métodos en módulos nativos.
+
+   3.3. No Bloqueo
+        - **Definición:** 
+          - Permite que el bucle de eventos continúe ejecutando otras tareas mientras las operaciones externas son asíncronas.
+        - **Ventajas:** 
+          - Mejora la concurrencia.
+          - Aumenta el rendimiento.
+        - **Características:** 
+          - Uso de devoluciones de llamada, promesas o `async/await`.
+
+   3.4. Comparación
+        - **Bloqueo:**
+          - Métodos síncronos que detienen la ejecución.
+        - **No Bloqueo:**
+          - Métodos asíncronos que permiten otras tareas mientras esperan resultados.
+
+   3.5. Concurrencia y Rendimiento
+        - **JavaScript en un solo hilo:**
+          - Node.js opera en un solo hilo.
+          - La concurrencia depende de operaciones asíncronas eficientes.
+        - **Ventajas de métodos no bloqueantes:**
+          - Liberan tiempo para manejar más solicitudes.
+        - **Comparación con otros lenguajes:**
+          - Node.js usa el bucle de eventos en lugar de hilos múltiples.
+
+   3.6. Peligros de Mezclar Código Bloqueante y No Bloqueante
+        - **Problema común:**
+          - Operaciones fuera de orden (ejemplo: eliminar un archivo antes de leerlo).
+        - **Solución:**
+          - Usar solo código no bloqueante.
+          - Garantiza el orden correcto de operaciones.
+
+4. Conclusión
+   - Impacto:
+     - Métodos bloqueantes son simples pero afectan el rendimiento.
+     - Métodos no bloqueantes optimizan la concurrencia y el rendimiento.
+   - Recomendación:
+     - Usar métodos asíncronos siempre que sea posible.
